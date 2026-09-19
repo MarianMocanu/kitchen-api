@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    environment:
+      PORT: "3000"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: "chef-${USER}"
+      POSTGRES_PASSWORD: "${USER}-cooking"
+      POSTGRES_DB: "kitchen"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

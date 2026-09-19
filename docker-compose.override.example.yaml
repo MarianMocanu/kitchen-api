@@ -1,0 +1,9 @@
+services:
+  api:
+    ports:
+      - "3000:3000"
+    command: npm run dev
+
+  postgres:
+    ports:
+      - "5432:5432"

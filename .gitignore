@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Docker
+docker-compose.override.yaml
+docker-compose.override.yml

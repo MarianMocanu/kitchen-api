@@ -14,6 +14,32 @@ services:
         - action: sync
           path: ./src
           target: /app/src
+        - action: sync
+          path: ./tests
+          target: /app/tests
+
+  test:
+    build: .
+    attach: false
+    command: npm run test:watch
+    develop:
+      watch:
+        - action: rebuild
+          path: Dockerfile
+
+        - action: rebuild
+          path: package.json
+
+        - action: rebuild
+          path: package-lock.json
+
+        - action: sync
+          path: ./src
+          target: /app/src
+
+        - action: sync
+          path: ./tests
+          target: /app/tests
 
   postgres:
     ports:

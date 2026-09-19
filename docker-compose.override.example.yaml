@@ -3,6 +3,17 @@ services:
     ports:
       - "3000:3000"
     command: npm run dev
+    develop:
+      watch:
+        - action: rebuild
+          path: Dockerfile
+        - action: rebuild
+          path: package.json
+        - action: rebuild
+          path: package-lock.json
+        - action: sync
+          path: ./src
+          target: /app/src
 
   postgres:
     ports:

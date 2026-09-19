@@ -1,0 +1,19 @@
+{
+  "name": "kitchen-api",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts",
+    "deps": "docker run --rm -v \"$PWD\":/app -w /app node:24.16.0-alpine npm install"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.0",
+    "typescript": "^5.9.3"
+  }
+}
